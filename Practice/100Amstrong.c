@@ -19,7 +19,10 @@
    }
   }
   int main(){
-    for(int j = 0; j < 1000; j++)
+    int z;
+    printf("\nEnetr n Numbers: ");
+    scanf("%d" ,&z);
+        for(int j = 0; j <z ; j++)
     {
        Arm(j);
     }
