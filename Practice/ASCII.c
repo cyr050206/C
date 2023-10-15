@@ -10,7 +10,7 @@ int main(){
     {
     case 1:{
     printf("\nEnter the Character: ");
-    scanf("%c", &c);
+    scanf(" %c", &c);
     a = (int)c;
     printf("Its ASCII value is %d " ,a);
     return 0;

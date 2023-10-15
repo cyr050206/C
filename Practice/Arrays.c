@@ -2,10 +2,18 @@
 #include <conio.h>
 int main()
 {
-    int prices[] = {4, 6, 7, 3, 5, 78};
+     int num;
+    printf("\nEnter the number of elements in array: ");
+    scanf("%d", &num);
+    char prices[num];
+    for(int j =0; j< (num); j++)
+    {
+        printf("\nCharacter: ");
+        scanf(" %c", &prices[j]);
+    }
     for (int i = 0; i < (sizeof(prices) / sizeof(prices[0])); i++)
     {
-        printf("%d ", prices[i]);
+        printf("%c ", prices[i]);
     }
     return 0;
 }

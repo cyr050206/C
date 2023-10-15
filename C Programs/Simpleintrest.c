@@ -11,7 +11,7 @@ void main()
   printf("Enter the Time in years \n");
   scanf("%d", &t);
   i = p * r * t / 100;
-  printf("The simple intrest is ₹ %f \n", i);
+  printf("The simple intrest is $ %f \n", i);
   getch();
   //  clrscr();
 }

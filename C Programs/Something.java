@@ -9,7 +9,7 @@ public class Something{
         a = a + b;
         b = a - b;
         a = a - b;
-        System.out.println("The 1st number now is :"+a);
+        System.out.println("The 1st number now is : "+a);
         System.out.println("The 2nd number now is : "+b);
 
     }
