@@ -1,0 +1,16 @@
+{
+	"printf-statement": {
+		"prefix": "prrr",
+		"body": [
+		  "printf();"
+		],
+		"description": "printf-statement"
+	  }
+	  "scanf-statement": {
+		"prefix": "sccc",
+		"body": [
+		  "scanf();"
+		],
+		"description": "scanf-statement"
+	  }
+}

@@ -9,5 +9,4 @@ void main()
     a++;
     ch = (char)a;
     printf("The next character in sequence is %c", ch);
-    getchar();
 }

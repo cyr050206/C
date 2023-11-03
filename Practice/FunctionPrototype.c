@@ -1,11 +1,13 @@
-#include<stdio.h>
-void bruh(char [], int);
+#include <stdio.h>
+void bruh(char[], int);
 
-void bruh(char name[], int age){
+void bruh(char name[], int age)
+{
     printf("\nYour name is %s", name);
     printf("\nYour age is %d", age);
 }
-int main(){
+int main()
+{
     char name[] = "Cyrus Rumao";
     int age = 17;
     bruh(name, age);

@@ -1,7 +1,10 @@
 {
-    "C_Cpp.errorSquiggles": "disabled",
-    "files.associations": {
-        "random": "c",
-        "stdio.h": "c"
-    }
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "random": "c",
+    "stdio.h": "c"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  }
 }

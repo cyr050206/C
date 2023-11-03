@@ -16,10 +16,10 @@ int main()
     stud3();
 
 }
-   int stud1()
-    {
-    char p,r;
-    long long int s,t;
+int stud1()
+{
+    char p, r;
+    long long int s, t;
     struct Student st1;
     printf("\nEnter student 1 details : ");
     printf("\nName: ");
@@ -31,11 +31,11 @@ int main()
     printf("\nEnter gender (M/F): ");
     r = scanf(" %c", &st1.gender);
     st1.gender = toupper(st1.gender);
-    return p,q,r,s;
-    }
+    return p, q, r, s;
+}
 
-    void stud2()
-    {
+void stud2()
+{
     struct Student st2;
     printf("\nEnter student 2 details : ");
     printf("\nName: ");
@@ -47,10 +47,10 @@ int main()
     printf("\nEnter gender (M/F): ");
     scanf(" %c", &st2.gender);
     st2.gender = toupper(st2.gender);
-    }
+}
 
-    void stud3()
-    {
+void stud3()
+{
     struct Student st3;
     printf("\nEnter student 3 details : ");
     printf("\nName: ");
@@ -62,4 +62,4 @@ int main()
     printf("\nEnter gender (M/F): ");
     scanf(" %c", &st3.gender);
     st3.gender = toupper(st3.gender);
-    }
+}
