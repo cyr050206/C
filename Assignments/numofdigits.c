@@ -1,14 +1,15 @@
 #include<stdio.h>
-int main(){
-    int n,x,i=0;
+#include<conio.h>
+int main() {
+    int n, x, i = 0;
     printf("\nEnter the number: ");
     scanf("%d", &n);
     do
     {
-        n/=10;
+        n /= 10;
         i++;
-    } while (n!=0);
-    
+    } while (n != 0);
+
     printf("The number of digits are %d", i);
     return 0;
 }
