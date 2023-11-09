@@ -5,6 +5,7 @@ int main() {
     {
         for (int j = 0;j < 3; j++)
         {
+
             printf(" %d ", numbers[i][j]);
         }
         printf("\n");
