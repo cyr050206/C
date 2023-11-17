@@ -29,7 +29,7 @@ int main()
         guess = toupper(guess);
         if (guess == answers[i])
         {
-            printf("Correct!");
+            printf("Correct!\n");
             score++;
         }
         else

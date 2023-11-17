@@ -1,114 +1,31 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <graphics.h>
+#include <math.h>
 
-#define SIZE 3
-
-
-void printPuzzle(int puzzle[SIZE][SIZE]) {
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
-            printf("%2d ", puzzle[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
-
-
-int isSolved(int puzzle[SIZE][SIZE]) {
-    int count = 1;
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
-            if (puzzle[i][j] != count && !(i == SIZE - 1 && j == SIZE - 1)) {
-                return 0; 
-            }
-            count++;
-        }
-    }
-    return 1; 
-}
-
-
-void swap(int puzzle[SIZE][SIZE], int emptyRow, int emptyCol, int newRow, int newCol) {
-    int temp = puzzle[emptyRow][emptyCol];
-    puzzle[emptyRow][emptyCol] = puzzle[newRow][newCol];
-    puzzle[newRow][newCol] = temp;
-}
-
-
-void initializePuzzle(int puzzle[SIZE][SIZE]) {
-    int count = 1;
-    int i, j; 
-    for (i = 0; i < SIZE; i++) {
-        for (j = 0; j < SIZE; j++) {
-            puzzle[i][j] = count++;
-        }
-    }
-    puzzle[SIZE - 1][SIZE - 1] = 0; 
-}
-
-
-void shufflePuzzle(int puzzle[SIZE][SIZE]) {
-    srand(time(NULL));
-    int i, j; 
-    for (i = SIZE - 1; i > 0; i--) {
-        for (j = SIZE - 1; j > 0; j--) {
-            int randRow = rand() % (i + 1);
-            int randCol = rand() % (j + 1);
-            swap(puzzle, i, j, randRow, randCol);
-        }
-    }
-}
+#define PI 3.14159265
 
 int main() {
-    int puzzle[SIZE][SIZE];
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\Turboc3\\BGI"); // Adjust the path as needed
 
-    
-    initializePuzzle(puzzle);
-    shufflePuzzle(puzzle);
+    int x = getmaxx() / 2;
+    int y = getmaxy() / 2;
+    int radius = 50;
 
-    
-    while (!isSolved(puzzle)) {
-        
-        printPuzzle(puzzle);
+    while (!kbhit()) {
+        cleardevice(); // Clear the screen
 
-        
-        int move;
-        printf("Enter the number you want to move (0 to exit): ");
-        scanf("%d", &move);
+        // Calculate new position for the circle
+        float angle = (float) i * 0.02; // Adjust the rotation speed
+        int newX = x + radius * cos(angle);
+        int newY = y + radius * sin(angle);
 
-        if (move == 0) {
-            printf("Exiting the game.\n");
-            break;
-        }
+        // Draw the circle at the new position
+        circle(newX, newY, radius);
 
-        
-        int row, col;
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                if (puzzle[i][j] == move) {
-                    row = i;
-                    col = j;
-                    break;
-                }
-            }
-        }
-
-        
-        if ((row > 0 && puzzle[row - 1][col] == 0) ||
-            (row < SIZE - 1 && puzzle[row + 1][col] == 0) ||
-            (col > 0 && puzzle[row][col - 1] == 0) ||
-            (col < SIZE - 1 && puzzle[row][col + 1] == 0)) {
-          
-            swap(puzzle, row, col, row - 1, col);
-        } else {
-            printf("Invalid move! Try again.\n");
-        }
+        delay(50); // Adjust the delay to control rotation speed
+        i++;
     }
 
-    
-    printPuzzle(puzzle);
-
+    closegraph();
     return 0;
 }
