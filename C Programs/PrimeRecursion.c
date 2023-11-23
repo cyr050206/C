@@ -11,6 +11,7 @@ int check(int n, int p)
     else
         return check(n, p - 1);
 }
+}
 
 
 int main()
