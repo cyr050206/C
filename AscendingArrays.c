@@ -10,11 +10,11 @@ int main()
     {
         scanf("%d", &a[i]);
     }
-    for (int j = 0;j < n - 1;j++)
+    for (int j = 0;j < n;j++)
     {
-        for (int i = 0;i < n - 1;i++)
+        for (int i = 0;i < n;i++)
         {
-            if (a[i] < a[i + 1])
+            if (a[i] > a[i + 1])
             {
                 temp = a[i];
                 a[i] = a[i + 1];
